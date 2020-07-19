@@ -3,6 +3,7 @@
  Lockboxes Program solution
 """
 
+
 def canUnlockAll(boxes):
     """
     Bool function to see if boxes can be opened
@@ -17,9 +18,8 @@ def canUnlockAll(boxes):
             if key not in seen_boxes:
                 seen_boxes.add(key)
                 keys.append(key)
-    
+
     for i in range(len(boxes)):
         if i not in seen_boxes:
             return False
     return(True)
-    
