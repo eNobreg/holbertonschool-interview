@@ -10,17 +10,20 @@ def canUnlockAll(boxes):
     """
     if not boxes:
         return False
+
     seen_boxes = {0}
     keys = [0]
     while(keys):
         c_key = keys.pop()
         for key in boxes[c_key]:
             if key not in seen_boxes:
-                seen_boxes.add(key)
                 if (key <= len(boxes) - 1):
+                    seen_boxes.add(key)
                     keys.append(key)
 
-    for i in range(len(boxes)):
-        if i not in seen_boxes:
-            return False
+    # for i in range(len(boxes)):
+    #    if i not in seen_boxes:
+    #        return False
+    if (len(seen_boxes) != len(boxes)):
+        return (False)
     return(True)
