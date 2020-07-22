@@ -21,9 +21,4 @@ def canUnlockAll(boxes):
                     seen_boxes.add(key)
                     keys.append(key)
 
-    # for i in range(len(boxes)):
-    #    if i not in seen_boxes:
-    #        return False
-    if (len(seen_boxes) != len(boxes)):
-        return (False)
-    return(True)
+    return(len(seen_boxes) != len(boxes))
