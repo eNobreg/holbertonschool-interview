@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+""" Moudule to host the min operations function """
 
 
 def minOperations(n):
+    """
+    Calculate the minimum operations to get to a given number
+    """
 
     currentChars = 1
     copyChars = 1
