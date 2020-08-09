@@ -22,9 +22,7 @@ def minOperations(n):
         if (n % currentChars == 0 and copyChars + currentChars <= n):
             copyChars = currentChars
             counter += 1
-            currentChars += copyChars
-        else:
-            currentChars += copyChars
+        currentChars += copyChars
         counter += 1
 
     return (counter)
