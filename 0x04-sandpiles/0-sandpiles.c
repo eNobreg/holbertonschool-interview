@@ -1,7 +1,7 @@
 #include "sandpiles.h"
 
 /**
- * sandpiles_sum - Takes in two 3x3 grids and sifts them till stable
+ * sandpiles_sum - Sifts two 3x3 grids till stable
  * @grid1: First grid to sift
  * @grid2: second grid to add
  * Return: None
@@ -27,7 +27,7 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 }
 
 /**
- * topple - Topples the sandpile by checking available positions
+ * topple - Topples the sandpile if pos > 3
  * @grid1: Grid to topple
  * @grid2: Grid to add values into
  * Return: Nothing
@@ -59,7 +59,7 @@ void topple(int grid1[3][3], int grid2[3][3])
 }
 
 /**
- * check_stability - Checks the stability of a pile: is stable if no positon > 3
+ * check_stability - Checks the stability of a pile
  * @grid1: Pile to check
  * Return: Nothing
  */
