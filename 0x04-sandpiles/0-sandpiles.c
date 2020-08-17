@@ -107,7 +107,7 @@ static void print_grid(int grid[3][3])
  * @grid1: First grid to add
  * @grid2: Second grid to add
  * Return: Nothing
- */.
+ */
 void add(int grid1[3][3], int grid2[3][3])
 {
 	int i = 0;
