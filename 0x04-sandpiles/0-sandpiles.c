@@ -87,7 +87,8 @@ int check_stability(int grid1[3][3])
  */
 static void print_grid(int grid[3][3])
 {
-	int i, j;
+	int i = 0; 
+	int j = 0;
 
 	printf("=\n");
 	for (i = 0; i < 3; i++)
