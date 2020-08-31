@@ -3,6 +3,7 @@
 The module for the log parsing script
 """
 import sys
+from time import sleep
 
 
 def print_log(file_size, status_codes):
@@ -19,6 +20,7 @@ def print_log(file_size, status_codes):
 
 
 if __name__ == "__main__":
+
     total_size = 0
     i = 0
 
@@ -32,10 +34,10 @@ if __name__ == "__main__":
         "405": 0,
         "500": 0
     }
+
     try:
         for line in sys.stdin:
             if (i == 10):
-                print("enter")
                 print_log(total_size, status_codes)
                 i = 0
 
@@ -45,12 +47,12 @@ if __name__ == "__main__":
             status_codes[status_code] += 1
 
             file_size = split_string[8]
-            file_size = int(file_size[:-2])
+            file_size = int(file_size)
             total_size += file_size
             i += 1
 
     except KeyboardInterrupt:
         print_log(total_size, status_codes)
-        raise
+        raise()
 
     print_log(total_size, status_codes)
