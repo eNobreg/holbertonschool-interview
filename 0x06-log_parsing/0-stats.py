@@ -38,8 +38,6 @@ if __name__ == "__main__":
 
     try:
         for line in sys.stdin:
-
-
             split_string = line.split(" ")
 
             status_code = split_string[7]
@@ -51,7 +49,7 @@ if __name__ == "__main__":
             file_size = int(file_size)
             total_size += file_size
             i += 1
-            
+
             if (i == 10):
                 print_log(total_size, status_codes)
                 i = 0
