@@ -4,6 +4,7 @@ The module for the log parsing script
 """
 import sys
 from time import sleep
+import traceback
 
 
 def print_log(file_size, status_codes):
@@ -44,15 +45,15 @@ if __name__ == "__main__":
             split_string = line.split(" ")
 
             status_code = split_string[7]
-            status_codes[status_code] += 1
+
+            if (status_code in status_codes.keys())
+                status_codes[status_code] += 1
 
             file_size = split_string[8]
             file_size = int(file_size)
             total_size += file_size
             i += 1
 
-    except KeyboardInterrupt:
+    except KeyboardInterrupt as err:
         print_log(total_size, status_codes)
-        raise
-
-    print_log(total_size, status_codes)
+        traceback.print_tb(err.__traceback__)
