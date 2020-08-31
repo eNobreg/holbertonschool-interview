@@ -53,6 +53,6 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt:
         print_log(total_size, status_codes)
-        raise()
+        raise
 
     print_log(total_size, status_codes)
