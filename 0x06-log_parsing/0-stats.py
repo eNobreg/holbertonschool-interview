@@ -56,4 +56,5 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt as err:
         print_log(total_size, status_codes)
-        traceback.print_tb(err.__traceback__)
+        raise
+    print_log(total_size, status_codes)
