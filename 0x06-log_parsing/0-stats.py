@@ -2,26 +2,24 @@
 """
 The module for the log parsing script
 """
+if __name__ == "__main__":
+    import sys
+    from time import sleep
+    import traceback
 
 
-
-def print_log(file_size, status_codes):
+    def print_log(file_size, status_codes):
     """
     Prints the logs of the input in the correct format
     Accepts a int file size, and a dictionary of status
     codes
     """
-    print("File size: {}".format(total_size))
+        print("File size: {}".format(total_size))
 
-    for key, value in sorted(status_codes.items()):
-        if value != 0:
-            print("{}: {}".format(key, value))
+        for key, value in sorted(status_codes.items()):
+            if value != 0:
+                print("{}: {}".format(key, value))
 
-
-if __name__ == "__main__":
-    import sys
-    from time import sleep
-    import traceback
 
     total_size = 0
     i = 0
