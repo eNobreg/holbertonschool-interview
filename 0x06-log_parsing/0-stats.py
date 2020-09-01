@@ -2,9 +2,7 @@
 """
 The module for the log parsing script
 """
-import sys
-from time import sleep
-import traceback
+
 
 
 def print_log(file_size, status_codes):
@@ -21,6 +19,9 @@ def print_log(file_size, status_codes):
 
 
 if __name__ == "__main__":
+    import sys
+    from time import sleep
+    import traceback
 
     total_size = 0
     i = 0
@@ -57,6 +58,6 @@ if __name__ == "__main__":
 
         print_log(total_size, status_codes)
 
-    except KeyboardInterrupt as err:
+    except KeyboardInterrupt:
         print_log(total_size, status_codes)
         raise
