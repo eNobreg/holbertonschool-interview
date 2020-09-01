@@ -15,7 +15,7 @@ def print_log(file_size, status_codes):
     """
     print("File size: {}".format(total_size))
 
-    for key, value in status_codes.items():
+    for key, value in sorted(status_codes.items()):
         if value != 0:
             print("{}: {}".format(key, value))
 
