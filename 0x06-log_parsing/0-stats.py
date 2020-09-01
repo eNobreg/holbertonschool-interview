@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     try:
         for line in sys.stdin:
-            split_string = line.split(" ")
+            split_string = line.split()
 
             status_code = split_string[-2]
             if status_code in status_codes.keys():
