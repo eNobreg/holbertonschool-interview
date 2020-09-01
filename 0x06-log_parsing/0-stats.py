@@ -17,7 +17,6 @@ if __name__ == "__main__":
             if value != 0:
                 print("{}: {}".format(key, value))
 
-
     total_size = 0
     i = 0
 
