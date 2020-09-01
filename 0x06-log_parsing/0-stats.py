@@ -39,14 +39,15 @@ if __name__ == "__main__":
     try:
         for line in sys.stdin:
             split_string = line.split(" ")
-
-            status_code = split_string[7]
-            if (status_code in status_codes.keys()):
-                status_codes[status_code] += 1
-
-            file_size = split_string[8]
-            file_size = int(file_size)
-            total_size += file_size
+            
+            if (split_string.length == 9):
+                status_code = split_string[7]
+                if (status_code in status_codes.keys()):
+                    status_codes[status_code] += 1
+            
+                file_size = split_string[8]
+                file_size = int(file_size)
+                total_size += file_size
 
             i += 1
 
