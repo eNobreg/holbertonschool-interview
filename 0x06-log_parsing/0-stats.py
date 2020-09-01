@@ -37,12 +37,12 @@ if __name__ == "__main__":
         for line in sys.stdin:
             split_string = line.split(" ")
 
-            if (len(split_string) == 9):
-                status_code = split_string[7]
+            if len(split_string) == 9:
+                status_code = split_string[-2]
                 if status_code in status_codes.keys():
                     status_codes[status_code] += 1
 
-                file_size = split_string[8]
+                file_size = split_string[-1]
                 file_size = int(file_size)
                 total_size += file_size
 
