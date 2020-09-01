@@ -2,7 +2,7 @@
 """
 The module for the log parsing script
 """
-if __name__ == "__main__":
+if __name__ == '__main__':
     import sys
 
     def print_log(file_size, status_codes):
@@ -35,19 +35,21 @@ if __name__ == "__main__":
         for line in sys.stdin:
             split_string = line.split()
 
-            status_code = split_string[-2]
-            if status_code in status_codes.keys():
-                status_codes[status_code] += 1
+            if len(split_string) == 9:
+                status_code = split_string[-2]
+                if status_code in status_codes.keys():
+                    status_codes[status_code] += 1
 
-            file_size = split_string[-1]
-            file_size = int(file_size)
-            total_size += file_size
+                file_size = split_string[-1]
+                file_size = int(file_size)
+                total_size += file_size
 
             i += 1
 
             if (i == 10):
                 print_log(total_size, status_codes)
                 i = 0
+
         print_log(total_size, status_codes)
     except KeyboardInterrupt:
         print_log(total_size, status_codes)
