@@ -41,7 +41,7 @@ if __name__ == "__main__":
             
             if (len(split_string) == 9):
                 status_code = split_string[7]
-                if (status_code in status_codes.keys()):
+                if status_code in status_codes.keys():
                     status_codes[status_code] += 1
             
                 file_size = split_string[8]
