@@ -41,13 +41,12 @@ if __name__ == "__main__":
             split_string = line.split(" ")
 
             status_code = split_string[7]
-
             if (status_code in status_codes.keys()):
                 status_codes[status_code] += 1
 
-                file_size = split_string[8]
-                file_size = int(file_size)
-                total_size += file_size
+            file_size = split_string[8]
+            file_size = int(file_size)
+            total_size += file_size
 
             i += 1
 
@@ -55,7 +54,8 @@ if __name__ == "__main__":
                 print_log(total_size, status_codes)
                 i = 0
 
+        print_log(total_size, status_codes)
+
     except KeyboardInterrupt as err:
         print_log(total_size, status_codes)
         raise
-    print_log(total_size, status_codes)
