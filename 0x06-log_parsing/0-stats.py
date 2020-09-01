@@ -40,7 +40,7 @@ if __name__ == "__main__":
         for line in sys.stdin:
             split_string = line.split(" ")
             
-            if (split_string.length == 9):
+            if (len(split_string) == 9):
                 status_code = split_string[7]
                 if (status_code in status_codes.keys()):
                     status_codes[status_code] += 1
