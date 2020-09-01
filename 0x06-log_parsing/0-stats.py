@@ -4,8 +4,6 @@ The module for the log parsing script
 """
 if __name__ == "__main__":
     import sys
-    from time import sleep
-    import traceback
 
     def print_log(file_size, status_codes):
         """
@@ -18,6 +16,7 @@ if __name__ == "__main__":
         for key, value in sorted(status_codes.items()):
             if value != 0:
                 print("{}: {}".format(key, value))
+
 
     total_size = 0
     i = 0
