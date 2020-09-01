@@ -9,11 +9,11 @@ if __name__ == "__main__":
 
 
     def print_log(file_size, status_codes):
-    """
-    Prints the logs of the input in the correct format
-    Accepts a int file size, and a dictionary of status
-    codes
-    """
+        """
+        Prints the logs of the input in the correct format
+        Accepts a int file size, and a dictionary of status
+        codes
+        """
         print("File size: {}".format(total_size))
 
         for key, value in sorted(status_codes.items()):
