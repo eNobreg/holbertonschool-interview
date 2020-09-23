@@ -39,7 +39,7 @@ def validUTF8(data):
             # 111x is 224
             if index + 1 < len(data) and 128 <= data[index + 1] < 192:
                 # If the index is in range, and the next leading bit is correct
-                k += 2
+                index += 2
             else:
                 return False
         elif 224 <= leading_byte < 240:
