@@ -29,9 +29,6 @@ def validUTF8(data):
     while index < len(data):
         leading_byte = data[index]
 
-        if (leading_byte > 255):
-            continue
-
         if 0 <= leading_byte < 128:
             # If byte doesn't start with 0, 0xxxxxxx = valid 1xxxxxxxx = inval
             index += 1
