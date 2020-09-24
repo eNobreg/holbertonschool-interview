@@ -69,8 +69,6 @@ def validUTF8(data):
                 index += 4
             else:
                 return False
-        elif 248 <= leading_byte <= 255:
-            return False
         else:
             # Return false because all leading formats were invalid
             return False
