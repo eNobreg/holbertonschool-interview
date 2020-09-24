@@ -22,8 +22,6 @@ def validUTF8(data):
     4-Bytes = 11110xxx || 240
 
     """
-    if not data:
-        return False
     if len(data) == 0:
         return False
 
