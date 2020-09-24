@@ -22,7 +22,7 @@ def validUTF8(data):
     4-Bytes = 11110xxx || 240
 
     """
-    if len(data) == 0:
+    if data is None:
         return False
 
     index = 0
