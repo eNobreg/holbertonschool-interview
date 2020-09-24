@@ -39,7 +39,7 @@ def validUTF8(data):
             # If the leading byte is matches a 2 bit character
             # 110x is 192
             # 111x is 224
-            if index + 1 < len(data) and 128 <= data[index + 1] < 192:
+            if index + 1 < len(data) and check_next(data, index, 1):
                 # If the index is in range, and the next leading bit is correct
                 index += 2
             else:
@@ -48,11 +48,8 @@ def validUTF8(data):
             # If the leading byte matches a 3 byte character
             # 224 is 1110xxxx
             # 240 is 1111xxxx
-            if index + 2 < len(data)\
-                and 128 <= data[index + 1] < 192\
-                    and 128 <= data[index + 2] < 192:
+            if index + 2 < len(data) and check_next(data, index, 2):
                 # If the index in range and the next two cont bits correct
-
                 index += 3
             else:
                 return False
@@ -61,10 +58,7 @@ def validUTF8(data):
             # If the leading byte matches a 4 byte character
             # 1111 0xxx is a valid character = 240
             # 1111 1xxx is invalid = 248
-            if index + 3 < len(data)\
-                and 128 <= data[index + 1] < 192\
-                    and 128 <= data[index + 2] < 192\
-                    and 128 <= data[index + 3] < 192:
+            if index + 3 < len(data) and check_next(data, index, 3) is True:
                 # If the index in range and the next three cont bits correct
                 index += 4
             else:
@@ -73,3 +67,19 @@ def validUTF8(data):
             # Return false because all leading formats were invalid
             return False
     return True
+
+
+def check_next(data, index, check_ahead):
+    """
+    Check Ahead bytes
+    """
+    flag = True
+    current = 1
+    while current <= check_ahead and flag:
+        if 128 <= data[index + current] < 192:
+            flag = True
+            current += 1
+        else:
+            flag = False
+            break
+    return flag
