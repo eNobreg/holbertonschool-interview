@@ -14,8 +14,8 @@ def validUTF8(data):
 
     Each folowing character must be followed by continuation bit(s)
 
-    A correct continuation bit is 10xxxxxx = 128
-    An incorrect continuation bit is 11xxxxxx = 192
+    A correct continuation bit is 10xxxxxx || 128
+    An incorrect continuation bit is 11xxxxxx || 192
 
     2-Byte = 110xxxxx || 192
     3-Byte = 1110xxxxx || 224
@@ -64,7 +64,7 @@ def validUTF8(data):
                     and 128 <= data[index + 2] < 192\
                     and 128 <= data[index + 3] < 192:
                 # If the index in range and the next three cont bits correct
-                index += 3
+                index += 4
             else:
                 return False
         else:
