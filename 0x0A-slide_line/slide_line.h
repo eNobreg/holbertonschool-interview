@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 #define SLIDE_LEFT 1
 #define SLIDE_RIGHT 0
