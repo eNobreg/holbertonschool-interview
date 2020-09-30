@@ -31,8 +31,9 @@ int slide_line(int *line, size_t size, int direction)
 int count_digits(int *line, int size)
 {
 	int j = 0;
+	int i = 0;
 
-	for (int i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
 		if (line[i] != 0)
 		{
@@ -50,7 +51,7 @@ int count_digits(int *line, int size)
  */
 int left_slide(int *line, size_t size)
 {
-	int new_array[size];
+	int new_array[1000];
 	size_t i = 0;
 	size_t j = 0;
 
@@ -91,7 +92,7 @@ int left_slide(int *line, size_t size)
  */
 int right_slide(int *line, int digits, int size)
 {
-	int new_array[size];
+	int new_array[1000];
 	int i = 0;
 	size_t j = (size - digits);
 
