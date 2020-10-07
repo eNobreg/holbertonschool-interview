@@ -17,6 +17,11 @@ void menger(int level)
     size = pow(3, level);
     scale = size / 3;
 
+    if (level == 0)
+    {
+        putchar('#');
+        return;
+    }
 
 
     for (i = 0; i < size; i++)
