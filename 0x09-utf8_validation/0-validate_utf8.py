@@ -72,7 +72,7 @@ def validUTF8(data):
         return True
     try:
         bytes(data).decode()
-    except UnicodeDecodeError:
+    except:
         return False
     return True
 
