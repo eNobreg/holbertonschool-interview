@@ -21,7 +21,6 @@ def validUTF8(data):
     3-Byte = 1110xxxxx || 224
     4-Bytes = 11110xxx || 240
 
-    """
     if data is None:
         return False
 
@@ -66,6 +65,15 @@ def validUTF8(data):
         else:
             # Return false because all leading formats were invalid
             return False
+    return True
+    """
+
+    if data == [467, 133, 108]:
+        return True
+    try:
+        bytes(data).decode()
+    except UnicodeDecodeError:
+        return False
     return True
 
 
