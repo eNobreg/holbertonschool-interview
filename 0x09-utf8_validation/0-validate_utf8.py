@@ -20,8 +20,8 @@ def validUTF8(data):
     2-Byte = 110xxxxx || 192
     3-Byte = 1110xxxxx || 224
     4-Bytes = 11110xxx || 240
-
     """
+
     if data is None:
         return False
 
