@@ -11,7 +11,7 @@ def rain(walls):
     if walls is None:
         return 0
     arr_len = len(walls)
-    i = 1
+    i = 0
     saved_index = 0
     total = 0
 
@@ -19,6 +19,8 @@ def rain(walls):
         if walls[i] >= walls[saved_index]:
             total += calculate_units(saved_index, i, walls)
             saved_index = i
+        elif i == arr_len - 1:
+            total += calculate_units(saved_index, i, walls) - walls[saved_index]
         i += 1
     return total
 
@@ -31,5 +33,6 @@ def calculate_units(start, end, arr):
     """
     total = 0
     for i in range(start, end):
-        total += (arr[start] - arr[i])
+        result = (arr[start] - arr[i])
+        total += result
     return total
