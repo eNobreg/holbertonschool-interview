@@ -8,6 +8,8 @@ def rain(walls):
     """
     Function to calculate amount of rain that can be held
     """
+    if walls is None:
+        return 0
     arr_len = len(walls)
     i = 1
     saved_index = 0
