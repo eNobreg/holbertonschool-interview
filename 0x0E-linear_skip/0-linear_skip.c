@@ -1,4 +1,5 @@
 #include "search.h"
+skiplist_t *traverse(skiplist_t *last_node, int value);
 
 /**
  * linear_skip - Linear skip search function
