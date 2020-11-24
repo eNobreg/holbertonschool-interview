@@ -20,7 +20,8 @@ def rain(walls):
             total += calculate_units(saved_index, i, walls)
             saved_index = i
         elif i == arr_len - 1:
-            total += calculate_units(saved_index, i, walls) - walls[saved_index]
+            walls[saved_index] -= 1
+            i = saved_index
         i += 1
     return total
 
