@@ -19,7 +19,7 @@ def count_words(subreddit, word_list, after='', result_dict={}):
         for entry in children:
             for word in word_list:
                 word = word.lower()
-                word_count = entry["data"]["title"].lower().split().count(word)
+                word_count = entry["data"]["title"].lower().count(word)
                 if word_count > 0:
                     if word not in result_dict.keys():
                         result_dict[word] = 0
