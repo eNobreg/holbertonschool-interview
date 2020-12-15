@@ -22,14 +22,17 @@ def count_words(subreddit, word_list, after='', result_dict={}):
                 lower = word.lower()
                 word_c = entry["data"]["title"].lower().split().count(lower)
                 if lower in entry["data"]["title"].lower():
+                    # print(lower)
+                    # print(entry["data"]["title"].lower())
+                    # print(word_c)
                     if lower not in result_dict.keys() and word_c > 0:
-                        result_dict[word] = 0 + word_c
+                        result_dict[lower] = 0 + word_c
                     elif word_c > 0:
-                        result_dict[word] += word_c
+                        result_dict[lower] += word_c
         after = data["after"]
         if after is None:
             for k, v in sorted(result_dict.items(),
-                               key=lambda item: item[1], reverse=True):
+                               key=lambda item: (-item[1], item[0])):
                 print("{}: {}".format(k, v))
             if (len(result_dict) is 0):
                 print('')
