@@ -20,12 +20,12 @@ def count_words(subreddit, word_list, after='', result_dict={}):
         for entry in children:
             for word in word_list:
                 lower = word.lower()
-                word_count = entry["data"]["title"].lower().split().count(lower)
+                word_c = entry["data"]["title"].lower().split().count(lower)
                 if lower in entry["data"]["title"].lower():
-                    if lower not in result_dict.keys():
-                        result_dict[word] = 0
-                    else:
-                        result_dict[word] += word_count
+                    if lower not in result_dict.keys() and word_c > 0:
+                        result_dict[word] = 0 + word_c
+                    elif word_c > 0:
+                        result_dict[word] += word_c
         after = data["after"]
         if after is None:
             for k, v in sorted(result_dict.items(),
