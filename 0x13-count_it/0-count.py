@@ -11,17 +11,18 @@ def count_words(subreddit, word_list, after='', result_dict={}):
     header = {"User-Agent": user_agent}
     resp = requests.get(url, headers=header, allow_redirects=False,
                         params={'after': after, 'limit': 100})
-    if (resp.status_code != 200):
+    if (resp.status_code != 200 or len(word_list) == 0):
+        print('')
         return(None)
     else:
         data = resp.json()["data"]
         children = data["children"]
         for entry in children:
             for word in word_list:
-                word = word.lower()
-                word_count = entry["data"]["title"].lower().count(word)
-                if word_count > 0:
-                    if word not in result_dict.keys():
+                lower = word.lower()
+                word_count = entry["data"]["title"].lower().split().count(lower)
+                if lower in entry["data"]["title"].lower():
+                    if lower not in result_dict.keys():
                         result_dict[word] = 0
                     else:
                         result_dict[word] += word_count
