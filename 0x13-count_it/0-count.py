@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" Module for searching reddit api"""
+
 
 def count_words(subreddit, word_list, after='', result_dict={}):
     """ recursive function """
@@ -18,14 +20,15 @@ def count_words(subreddit, word_list, after='', result_dict={}):
             for word in word_list:
                 word = word.lower()
                 word_count = entry["data"]["title"].lower().split().count(word)
-                if  word_count > 0:
+                if word_count > 0:
                     if word not in result_dict.keys():
                         result_dict[word] = 0
                     else:
                         result_dict[word] += word_count
         after = data["after"]
         if after is None:
-            for k, v in sorted(result_dict.items(), key=lambda item: item[1],reverse=True):
+            for k, v in sorted(result_dict.items(),
+                               key=lambda item: item[1], reverse=True):
                 print("{}: {}".format(k, v))
             return result_dict
         else:
