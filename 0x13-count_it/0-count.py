@@ -12,7 +12,6 @@ def count_words(subreddit, word_list, after='', result_dict={}):
     resp = requests.get(url, headers=header, allow_redirects=False,
                         params={'after': after, 'limit': 100})
     if (resp.status_code != 200):
-        print('')
         return(None)
     else:
         data = resp.json()["data"]
