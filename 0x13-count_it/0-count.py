@@ -20,7 +20,7 @@ def count_words(subreddit, word_list, after='', result_dict={}):
         for entry in children:
             for word in word_list:
                 lower = word.lower()
-                word_c = entry["data"]["title"].lower().split().count(lower)
+                word_c = entry["data"]["title"].lower().count(lower)
                 if lower in entry["data"]["title"].lower():
                     # print(lower)
                     # print(entry["data"]["title"].lower())
