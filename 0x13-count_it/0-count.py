@@ -11,7 +11,7 @@ def count_words(subreddit, word_list, after='', result_dict={}):
     header = {"User-Agent": user_agent}
     resp = requests.get(url, headers=header, allow_redirects=False,
                         params={'after': after, 'limit': 100})
-    if (resp.status_code != 200 or len(word_list) == 0):
+    if (resp.status_code != 200):
         print('')
         return(None)
     else:
@@ -36,6 +36,7 @@ def count_words(subreddit, word_list, after='', result_dict={}):
                 print("{}: {}".format(k, v))
             if (len(result_dict) is 0):
                 print('')
+                return(None)
             return result_dict
         else:
             return count_words(subreddit, word_list, after, result_dict)
