@@ -9,36 +9,36 @@ heap_t *move_last_node(heap_t *root);
  */
 int heap_extract(heap_t **root)
 {
-    heap_t *last_node = NULL;
-    heap_t *holder = NULL;
-    int root_value = 0;
+	heap_t *last_node = NULL;
+	heap_t *holder = NULL;
+	int root_value = 0;
 
-    if (!(*root) || !(root))
-        return (0);
+	if (!(*root) || !(root))
+		return (0);
 
-    holder = *root;
-    root_value = holder->n;
-    last_node = move_last_node(holder);
+	holder = *root;
+	root_value = holder->n;
+	last_node = move_last_node(holder);
 
-    if (holder == last_node)
-    {
-        *root = NULL;
-        free(holder);
-        return(root_value);
-    }
+	if (holder == last_node)
+	{
+		*root = NULL;
+		free(holder);
+		return (root_value);
+	}
 
-    if (last_node->parent->right)
-        last_node->parent->right = NULL;
-    else
-        last_node->parent->left = NULL;
+	if (last_node->parent->right)
+		last_node->parent->right = NULL;
+	else
+		last_node->parent->left = NULL;
 
-    holder->n = last_node->n;
+	holder->n = last_node->n;
 
-    cascade_down(holder);
+	cascade_down(holder);
 
-    free(last_node);
+	free(last_node);
 
-    return (root_value);
+	return (root_value);
 }
 
 /**
@@ -48,20 +48,20 @@ int heap_extract(heap_t **root)
  */
 size_t binary_tree_height(heap_t *root)
 {
-    size_t left = 0;
-    size_t right = 0;
+	size_t left = 0;
+	size_t right = 0;
 
-    if (root == NULL)
-    {
-        return (0);
-    }
-    else
-    {
-        left = binary_tree_height(root->left) + 1;
-        right = binary_tree_height(root->right) + 1;
-    }
+	if (root == NULL)
+	{
+		return (0);
+	}
+	else
+	{
+		left = binary_tree_height(root->left) + 1;
+		right = binary_tree_height(root->right) + 1;
+	}
 
-    return ((left >= right) ? left : right);
+	return ((left >= right) ? left : right);
 }
 
 /**
@@ -71,11 +71,11 @@ size_t binary_tree_height(heap_t *root)
  */
 size_t binary_tree_size(heap_t *root)
 {
-    if (root == NULL)
-        return (0);
-    
-    return (1 + binary_tree_size(root->left) + 
-            binary_tree_size(root->right));
+	if (root == NULL)
+		return (0);
+
+	return (1 + binary_tree_size(root->left) +
+			binary_tree_size(root->right));
 }
 
 /**
@@ -85,26 +85,26 @@ size_t binary_tree_size(heap_t *root)
  */
 void cascade_down(heap_t *root)
 {
-    heap_t *largest_node = NULL;
-    int temp;
+	heap_t *largest_node = NULL;
+	int temp;
 
-    if (!root)
-        return;
+	if (!root)
+		return;
 
-    if (root->right && root->right->n > root->left->n)
-    {
-        largest_node = root->right;
-    }
-    else if (root->left)
-        largest_node = root->left;
+	if (root->right && root->right->n > root->left->n)
+	{
+		largest_node = root->right;
+	}
+	else if (root->left)
+		largest_node = root->left;
 
-    if (largest_node && largest_node->n > root->n)
-    {
-        temp = largest_node->n;
-        largest_node->n = root->n;
-        root->n = temp;
-        cascade_down(largest_node);
-    }
+	if (largest_node && largest_node->n > root->n)
+	{
+		temp = largest_node->n;
+		largest_node->n = root->n;
+		root->n = temp;
+		cascade_down(largest_node);
+	}
 }
 
 /**
@@ -114,17 +114,17 @@ void cascade_down(heap_t *root)
  */
 heap_t *move_last_node(heap_t *root)
 {
-    if (root == NULL)
-        return (NULL);
-    
-    if (!root->left && !root->right)
-        return (root);
+	if (root == NULL)
+		return (NULL);
 
-    if(binary_tree_height(root->left) > binary_tree_height(root->right))
-        return (move_last_node(root->left));
+	if (!root->left && !root->right)
+		return (root);
 
-    if (binary_tree_size(root->left) > binary_tree_size(root->right))
-        return(move_last_node(root->right));
+	if (binary_tree_height(root->left) > binary_tree_height(root->right))
+		return (move_last_node(root->left));
 
-    return (move_last_node(root->right));
+	if (binary_tree_size(root->left) > binary_tree_size(root->right))
+		return (move_last_node(root->right));
+
+	return (move_last_node(root->right));
 }
