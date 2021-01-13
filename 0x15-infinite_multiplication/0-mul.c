@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	}
 
 	multiply(len_first, len_second, len_result, argv[1], argv[2], results);
-	putchar('\n');
+	_putchar('\n');
 
 	free(results);
 	return (0);
