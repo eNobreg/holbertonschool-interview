@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * main - Driver
+ * @argc: Amount of arguments passed in
+ * @argv: Arguments passed from command line
+ * Return: 0 or nothing depend on error
+ */
 int main(int argc, char *argv[])
 {
 
@@ -109,18 +115,6 @@ int checkDigit(char *digit)
 		i++;
 	}
 	return (1);
-}
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
 }
 
 /**
