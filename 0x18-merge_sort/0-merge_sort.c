@@ -70,7 +70,7 @@ void merge_arrays(int *arr, size_t mid, size_t end, size_t start, int *temp)
 
 	for (k = start; k <= end; k++)
 	{
-		if (i < mid && (j >= end || arr[i] <= arr[j]))
+		if (i < mid && (j >= end || arr[i] < arr[j]))
 		{
 			temp[k] = arr[i];
 			i++;
