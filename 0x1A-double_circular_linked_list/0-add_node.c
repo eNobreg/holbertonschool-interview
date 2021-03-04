@@ -75,13 +75,16 @@ List *add_node_begin(List **list, char *str)
 List *create_node(char *content)
 {
 	List *new = malloc(sizeof(List));
-
 	if (!new)
 	{
 		return (NULL);
 	}
 
-	new->str = content;
+	new->str = strdup(content);
+	if (!new->str)
+	{
+		return (NULL);
+	}
 
 	new->next = NULL;
 	new->prev = NULL;
