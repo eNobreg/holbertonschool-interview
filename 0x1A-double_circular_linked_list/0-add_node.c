@@ -75,6 +75,7 @@ List *add_node_begin(List **list, char *str)
 List *create_node(char *content)
 {
 	List *new = malloc(sizeof(List));
+
 	if (!new)
 	{
 		return (NULL);
