@@ -33,6 +33,7 @@ void countingSort(int *arr, int n, int exp)
 		output = malloc(sizeof(int) * n);
 		if (output == NULL)
 			return;
+
 		for (i = 0; i < n; i++)
 			count[(arr[i] / exp) % 10]++;
 		for (i = 1; i < 10; i++)

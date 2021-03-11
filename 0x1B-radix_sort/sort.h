@@ -6,5 +6,7 @@
 
 void print_array(const int *array, size_t size);
 void radix_sort(int *array, size_t size);
+void countingSort(int *arr, int n, int exp);
+int getMax(int *array, int n);
 
 #endif
