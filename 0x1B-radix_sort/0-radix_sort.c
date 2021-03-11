@@ -10,8 +10,9 @@
 int getMax(int *array, int n)
 {
 	int max = array[0];
+	int i = 0;
 
-	for (int i = 1; i < n; i++)
+	for (i = 1; i < n; i++)
 		if (array[i] > max)
 			max = array[i];
 	return (max);
@@ -27,7 +28,7 @@ int getMax(int *array, int n)
 void countingSort(int *arr, int n, int exp)
 {
 		int *output = NULL;
-		int i;
+		int i = 0;
 		int count[10] = {0};
 
 		output = malloc(sizeof(int) * n);
