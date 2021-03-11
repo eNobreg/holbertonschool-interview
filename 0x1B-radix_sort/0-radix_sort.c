@@ -7,7 +7,7 @@
  * @n: Length of the array
  * Return: The max value
  */
-int getMax(int array[], int n)
+int getMax(int *array, int n)
 {
 	int max = array[0];
 
@@ -59,8 +59,13 @@ void countingSort(int *arr, int n, int exp)
  */
 void radix_sort(int *array, size_t size)
 {
-	int max = getMax(array, size);
+	int max = 0;
 	int place = 0;
+
+	if (!array || size < 2)
+		return;
+
+	max = getMax(array, size);
 
 	for (place = 1; max / place > 0; place *= 10)
 		countingSort(array, size, place);
