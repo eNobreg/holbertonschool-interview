@@ -17,7 +17,7 @@ def island_perimeter(grid):
     for j in range(0, len(grid)):
         for i in range(0, len(grid[j])):
             c = i
-            if grid[i][j] == 1:
+            if grid[j][i] == 1:
                 perimeter = 4
                 # Checks indexes above, below, next, and behind the
                 # current array index
