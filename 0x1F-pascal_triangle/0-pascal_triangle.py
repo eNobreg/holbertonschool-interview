@@ -4,6 +4,8 @@
 
 def pascal_triangle(n):
     """ Making a matrix """
+
+
     matrix = []
 
     if n <= 0:
@@ -14,6 +16,6 @@ def pascal_triangle(n):
         num = 1
         for i in range(1, j + 1):
             new_list.append(num)
-            num = int(num * (j - i) / i + 0.1)
+            num = round(num * (j - i) / i + 0.1)
         matrix.append(new_list)
     return matrix
