@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Triangle Print """
 
+
 def pascal_triangle(n):
     """ Making a matrix """
     matrix = []
@@ -16,3 +17,4 @@ def pascal_triangle(n):
             num = int(num * (j - i) / i + 0.1)
         matrix.append(new_list)
     return matrix
+	
