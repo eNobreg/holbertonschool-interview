@@ -5,7 +5,6 @@
 def pascal_triangle(n):
     """ Making a matrix """
 
-
     matrix = []
 
     if n <= 0:
